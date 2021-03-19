@@ -5,10 +5,18 @@
          version="4.0">
     <servlet>
         <servlet-name>Hey</servlet-name>
-        <servlet-class>com.yinxingyu.week2.HelloWorldServlet</servlet-class>
+        <servlet-class>com.yinxingyu.week2.homework.HelloWorldServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Hey</servlet-name>
         <url-pattern>/Hey!</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.yinxingyu.week3.homework.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
 </web-app>

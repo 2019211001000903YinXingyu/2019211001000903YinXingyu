@@ -10,7 +10,7 @@
     <title>register</title>
 </head>
 <body>
-<form>
+<form method="post" action="/2019211001000903YinXingyu_war_exploded/register">
     NEW USER REGISTRATION<br/>
     <label for="Username">USERNAME</label><br/>
     <input type="text" name="Username" id="Username" placeholder="Please input username" required autofocus><br/>
@@ -22,9 +22,9 @@
     <input type="email" name="Email" id="Email" placeholder="Please input Email" required autofocus><br/>
 
 
-    <input type="radio" name="sex" value="Male" checked/>Male
+    <input type="radio" name="Gender" value="Male" checked/>Male
 
-    <input type="radio" name="sex" value="Female" checked/>Female<br/>
+    <input type="radio" name="Gender" value="Female" checked/>Female<br/>
 
     <label for="BirthDate">BIRTHDATE</label><br/>
     <input type="date" name="BirthDate" id="BirthDate" placeholder="Day of Birth (yyyy-mm-dd)" ><br/>
