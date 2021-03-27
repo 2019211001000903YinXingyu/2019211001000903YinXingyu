@@ -3,12 +3,39 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>Hey</servlet-name>
-        <servlet-class>com.yinxingyu.week2.HelloWorldServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Hey</servlet-name>
-        <url-pattern>/Hey!</url-pattern>
-    </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>Hey</servlet-name>-->
+<!--        <servlet-class>com.yinxingyu.week2.homework.HelloWorldServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>Hey</servlet-name>-->
+<!--        <url-pattern>/Hey!</url-pattern>-->
+<!--    </servlet-mapping>-->
+<!--    <servlet>-->
+<!--        <servlet-name>RegisterServlet</servlet-name>-->
+<!--        <servlet-class>com.yinxingyu.week3.homework.RegisterServlet</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>RegisterServlet</servlet-name>-->
+<!--        <url-pattern>/register</url-pattern>-->
+<!--    </servlet-mapping>-->
+
+<!--    Task1-->
+<!--    <servlet>-->
+<!--        <servlet-name>ConfigDemoServlet</servlet-name>-->
+<!--        <servlet-class>com.yinxingyu.week4.homework.ConfigDemoServlet</servlet-class>-->
+<!--        <init-param>-->
+<!--            <param-name>name</param-name>-->
+<!--            <param-value>Yin Xingyu</param-value>-->
+<!--        </init-param>-->
+<!--        <init-param>-->
+<!--            <param-name>studentId</param-name>-->
+<!--            <param-value>2019211001000903</param-value>-->
+<!--        </init-param>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ConfigDemoServlet</servlet-name>-->
+<!--        <url-pattern>/config</url-pattern>-->
+<!--    </servlet-mapping>-->
+
 </web-app>
