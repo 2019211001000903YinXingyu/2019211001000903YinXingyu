@@ -9,7 +9,7 @@
 
     <h1>Login<br>
 
-    <form method="post" action="/2019211001000903YinXingyu_war_exploded/login">
+    <form method="post" action="/login">
         <label for="Username">USERNAME</label><br/>
         <input type="text" name="Username" id="Username" placeholder="Please input username" required autofocus><br/>
 
