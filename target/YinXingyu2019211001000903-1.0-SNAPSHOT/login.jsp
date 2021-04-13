@@ -7,9 +7,16 @@
 --%>
 <%@include file="header.jsp"%>
 
-    <h1>Login<br>
+    <h1>Login</h1><br>
 
-    <form method="post" action="/login">
+        <%
+            if (!(request.getAttribute("message")==null)){
+                //error
+                out.println("<h3>"+request.getAttribute("message")+"</h3>");
+            }
+        %>
+
+    <form method="post" action="login">
         <label for="Username">USERNAME</label><br/>
         <input type="text" name="Username" id="Username" placeholder="Please input username" required autofocus><br/>
 
