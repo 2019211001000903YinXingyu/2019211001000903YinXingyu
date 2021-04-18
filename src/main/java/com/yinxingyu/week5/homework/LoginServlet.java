@@ -1,10 +1,12 @@
 package com.yinxingyu.week5.homework;
 
+import com.yinxingyu.dao.UserDao;
+import com.yinxingyu.model.User;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
 
 @WebServlet(name = "LoginServlet", value = "/login")
@@ -29,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
 
     }
 
@@ -37,7 +39,23 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String Username = request.getParameter("Username");
         String Password = request.getParameter("Password");
-        String sql = "select * from usertable where Username='" + Username + "' and Password='" + Password + "'";
+
+        UserDao userDao = new UserDao();
+        try {
+            User user = userDao.findByUsernamePassword(con, Username, Password);
+            if (user != null) {
+                request.setAttribute("user", user);
+                request.getRequestDispatcher("WEB-INF/views/UserInfo.jsp").forward(request, response);
+            } else {
+                request.setAttribute("message", "Username or Password Error!!!");
+                request.getRequestDispatcher("WEB-INF/views/login.jsp").forward(request, response);
+
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        /* String sql = "select * from usertable where Username='" + Username + "' and Password='" + Password + "'";
 
         try {
             System.out.println("con:" + con);
@@ -64,6 +82,6 @@ public class LoginServlet extends HttpServlet {
             }
         } catch (Exception e) {
             System.out.println(e);
-        }
+        }*/
     }
 }
