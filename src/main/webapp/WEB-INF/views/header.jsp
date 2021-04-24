@@ -14,7 +14,7 @@
                             padding:0px;
                             margin:0px;" valign="bottom">
 
-            <img src="com.yinxingyu.week5.homework/logo.jpg" align="left">
+            <img src="logo.jpg" align="left">
         </td>
     </tr>
     <tr>
@@ -25,7 +25,7 @@
                             border-top-width:0px;
                             border-color:black;" align="center">
             <a style="color:white;" href="home">Home</a>
-            - <a style="color:white;" href="login.jsp">Login</a>
+            - <a style="color:white;" href="login">Login</a>
             - <a style="color:white;" href="productList">Product</a>
             - <a style="color:white;" href="#">FAQ</a>
             - <a style="color:white;" href="#">About</a>
