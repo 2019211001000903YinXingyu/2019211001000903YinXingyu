@@ -44,7 +44,16 @@ public class LoginServlet extends HttpServlet {
         try {
             User user = userDao.findByUsernamePassword(con, Username, Password);
             if (user != null) {
-                request.setAttribute("user", user);
+                //valid
+                //week 8 code
+                //create a session
+                HttpSession session = request.getSession();
+                //check session id
+                System.out.println("session id -->" + session.getId());
+                session.setMaxInactiveInterval(10);
+
+                //set user model into request
+                session.setAttribute("user", user);
                 request.getRequestDispatcher("WEB-INF/views/UserInfo.jsp").forward(request, response);
             } else {
                 request.setAttribute("message", "Username or Password Error!!!");
