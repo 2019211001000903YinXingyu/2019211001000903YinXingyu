@@ -14,6 +14,11 @@
 
 <table>
   <tr>
+      <td>Id:</td>
+      <td><%=u.getId()%>
+      </td>
+    </tr>
+  <tr>
     <td>Username:</td>
     <td><%=u.getUsername()%>
     </td>
@@ -37,6 +42,9 @@
     <td>BirthDate:</td>
     <td><%=u.getBirthDate()%>
     </td>
+  </tr>
+  <tr>
+    <a href="updateUser">Update User</a>
   </tr>
 </table>
 <%@include file="footer.jsp" %>

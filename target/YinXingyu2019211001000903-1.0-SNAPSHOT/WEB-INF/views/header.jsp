@@ -51,7 +51,7 @@
     <tr height="20">
         <td align="right">
             <%
-                if(session.getAttribute("user")!=null){
+                if (session.getAttribute("user") != null) {
 
 
             %>
