@@ -41,11 +41,6 @@
                     String username = user.getUsername();
                     out.println(username);
                 } else {
-//                User user = (User)session.getAttribute("user");
-//                if(user != null)
-//                    //print username
-//                    out.println(user.getUsername());
-//                }else{//print guest
             %>
             <font size="18" color="red"> Guest</font>
             <%
@@ -55,9 +50,15 @@
     </tr>
     <tr height="20">
         <td align="right">
-            <br> <a href="#">Logout</a>
+            <%
+                if (session.getAttribute("user") != null) {
+
+
+            %>
+            <br> <a href="logout">Logout</a>
+            <%}%>
             <br><a href="#">My Cart</a><br/>
-            <a href="com.yinxingyu.week5.homework/register.jsp">Register Here</a>
+            <a href="register.jsp">Register Here</a>
         </td>
     </tr>
 </table>
