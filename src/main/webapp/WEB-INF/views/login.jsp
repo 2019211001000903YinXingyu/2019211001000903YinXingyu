@@ -1,43 +1,51 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 殷星雨
-  Date: 2021/4/1
-  Time: 21:33
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <%@include file="header.jsp" %>
-<body>
-<h2>Login</h2>
-    <%
-    if((request.getAttribute("message")!=null)) {
-        out.print("<h3>"+request.getAttribute("message")+"<h3>");
-    }
-%>
-    <%
-    Cookie[] allCookies=request.getCookies();
-    String username = "",password="",rememberMeVal="";
-    if(allCookies != null) {
-        for(Cookie c:allCookies) {
-            if(c.getName().equals("cUsername")) {
-                username=c.getValue();
-            }
-            if(c.getName().equals("cPassword")) {
-                password=c.getValue();
-            }if(c.getName().equals("rememberMeVal")) {
-                rememberMeVal=c.getValue();
-            }
-        }
-    }
-%>
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form"><!--login form-->
+                    <h2>Login to your account</h2>
+                    <%
+                        if (!(request.getAttribute("message") == null)) {
+                            out.println("<h2>" + request.getAttribute("message") + "</h2>");
+                        }
+                    %>
+                    <%
+                        Cookie[] cookies = request.getCookies();
+                        String Username = "";
+                        String Password = "";
+                        String rememberMe = "";
+                        if (cookies != null) {
+                            for (Cookie cookie : cookies) {
+                                if (cookie.getName().equals("cUsername")) {
+                                    Username = cookie.getValue();
+                                }
+                                if (cookie.getName().equals("cPassword")) {
+                                    Password = cookie.getValue();
+                                }
+                                if (cookie.getName().equals("cRememberMe")) {
+                                    rememberMe = cookie.getValue();
+                                }
+                            }
+                        }
+                        //update 5 user basepath
+                    %>
 
-<form action="login" method="post">
+                    <form method="post" action="<%=basePath+"login"%>">
+                        <input type="text" name="Username" placeholder="Username" value="<%=Username%>"><br>
+                        <input type="password" name="Password" placeholder="Password" value="<%=Password%>">
+                        <br/> <span>
+                        <input type="checkbox" class="checkbox" name="remember"
+                               value="1" <%="1".equals(rememberMe) ? "checked" : ""%>/> Keep me signed in</span>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                </div><!--/login form-->
+            </div>
 
-    Username:<input type="text" name="Username" id="Username" value="<%=username%>"><br>
-    Password:<input type="password" name="Password" id="Password" value="<%=password%>"><br>
-    <input type="checkbox" name="rememberMe" value="1" <%= rememberMeVal.equals("1") ? "checked" : ""%>/>Remember
-    Me<br/>
-    <input type="submit" value="login">
-</form>
+
+        </div>
+    </div>
+</section>
+<!--/form-->
 <%@include file="footer.jsp" %>
