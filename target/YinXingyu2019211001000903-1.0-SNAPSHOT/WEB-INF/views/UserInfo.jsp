@@ -14,10 +14,10 @@
 
 <table>
   <tr>
-      <td>Id:</td>
-      <td><%=u.getId()%>
-      </td>
-    </tr>
+    <td>Id:</td>
+    <td><%=u.getId()%>
+    </td>
+  </tr>
   <tr>
     <td>Username:</td>
     <td><%=u.getUsername()%>

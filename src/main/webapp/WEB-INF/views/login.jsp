@@ -32,7 +32,7 @@
                         //update 5 user basepath
                     %>
 
-                    <form method="post" action="<%=basePath+"login"%>">
+                    <form method="post" action="<%=request.getContextPath()+"/login"%>">
                         <input type="text" name="Username" placeholder="Username" value="<%=Username%>"><br>
                         <input type="password" name="Password" placeholder="Password" value="<%=Password%>">
                         <br/> <span>
@@ -42,8 +42,6 @@
                     </form>
                 </div><!--/login form-->
             </div>
-
-
         </div>
     </div>
 </section>
